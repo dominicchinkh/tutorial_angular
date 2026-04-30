@@ -1,8 +1,34 @@
-# Trading
+# Angular tutorial
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.7.
+This project was built as a hands-on exploration of Angular fundamentals, generated using Angular CLI version 21.2.7.
+
+📚 Learning Resources
+
+This project is a compilation of concepts and exercises from the following resources:
+
+[Angular 101 Crash Course For Beginners: Learn Angular Fundamentals](https://www.youtube.com/watch?v=uWpgtcSxJ3E&t=3066s)
+
+[Official Angular.dev Tutorials](https://angular.dev/tutorials/learn-angular)
+
+🛠 Project Philosophy
+
+To better understand the underlying architecture, I chose a "manual-first" approach:
+
+**Manual Creation**: Instead of using ng generate, I manually created components, pipes, and services to master the boilerplate and configuration.
+
+**Minimalist Structure**: Most components are contained within single files with simplified templates and styles. This keeps the focus entirely on the logic rather than folder nesting.
+
+**Purely Educational**: This repository is a sandbox for learning. As the focus was on syntax and state management rather than production features, no unit tests are included.
 
 ## Development server
+
+🚀 Getting Started
+
+To grab the dependencies, run:
+
+```bash
+npm install
+```
 
 To start a local development server, run:
 
@@ -12,52 +38,12 @@ ng serve
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
 ## Building
 
-To build the project run:
+To build the project, run:
 
 ```bash
 ng build
 ```
 
 This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-
-This project is based on my learning on
-[Angular 101 Crash Course For Beginners: Learn Angular Fundamentals](https://www.youtube.com/watch?v=uWpgtcSxJ3E&t=3066s)
-[Learn Angular tutorial](https://angular.dev/tutorials/learn-angular)

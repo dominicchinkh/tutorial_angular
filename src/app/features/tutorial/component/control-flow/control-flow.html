@@ -1,0 +1,22 @@
+@if (isLoggedIn) {
+    <p>Welcome back, Friend!</p>
+}
+
+@if (isServerRunning) {
+    <span>Yes, the server is running</span>
+} 
+@else {
+    <span>No, the server is not running</span>
+}
+
+<ul>
+@for (os of operatingSystems; track os.id) {
+    <li>{{ os.name }}</li>
+}
+</ul>
+
+<ul>
+@for (user of users; track user.id) {
+    <li>{{ user.name }}</li>
+}
+</ul>

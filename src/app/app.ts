@@ -17,6 +17,8 @@ import {RouterLink, RouterOutlet} from '@angular/router';
         |
         <a routerLink="/property-binding">Property Binding</a>
         |
+        <a routerLink="/content-projection">Content Projection</a>
+        |
         <a routerLink="/input-output">Input/Output</a>
         |
         <a routerLink="/template-driven-form">Template Driven Form</a>

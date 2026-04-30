@@ -16,8 +16,6 @@ To better understand the underlying architecture, I chose a "manual-first" appro
 
 **Manual Creation**: Instead of using ng generate, I manually created components, pipes, and services to master the boilerplate and configuration.
 
-**Minimalist Structure**: Most components are contained within single files with simplified templates and styles. This keeps the focus entirely on the logic rather than folder nesting.
-
 **Purely Educational**: This repository is a sandbox for learning. As the focus was on syntax and state management rather than production features, no unit tests are included.
 
 ## Development server

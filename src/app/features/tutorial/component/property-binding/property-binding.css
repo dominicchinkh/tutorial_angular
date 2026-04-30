@@ -1,0 +1,6 @@
+.editable-box {
+    min-height: 1.0rem;
+    border: 2px solid #2563eb;
+    width: 20ch;
+    overflow-wrap: break-word;
+}

@@ -1,0 +1,7 @@
+<section (mouseover)="showSecretMessage()">
+    There's a secret message for you, hover to reveal: {{ message }}
+</section>
+
+<input (keyup)="changeMessage($event)" [value]="message" />
+
+<button (click)="clearSecretMessage()">Hide the message</button>

@@ -1,19 +1,21 @@
 import { Routes } from '@angular/router';
-import { InjectableService } from './features/tutorial/component/injectable-service';
-import { ControlFlow } from './features/tutorial/component/control-flow';
-import { DeferrableView } from './features/tutorial/component/deferrable-view';
-import { Event } from './features/tutorial/component/event';
-import { Image } from './features/tutorial/component/image';
-import { InputOutput } from './features/tutorial/component/input-output';
-import { LifecycleHook } from './features/tutorial/component/lifecycle-hook';
-import { MyClass } from './features/tutorial/component/my-class';
-import { Pipe } from './features/tutorial/component/pipe';
-import { PropertyBinding } from './features/tutorial/component/property-binding';
-import { Signal } from './features/tutorial/component/signal';
-import { Style } from './features/tutorial/component/style';
-import { Tutorial } from './features/tutorial/component/tutorial/tutorial';
-import { TemplateDrivenForm } from './features/tutorial/component/template-driven-form';
-import { ReactiveForm } from './features/tutorial/component/reactive-form';
+
+import { Class }              from './features/tutorial/component/class/class';
+import { ContentProjection }  from './features/tutorial/component/content-projection/content-projection';
+import { ControlFlow }        from './features/tutorial/component/control-flow/control-flow';
+import { DeferrableView }     from './features/tutorial/component/deferrable-view/deferrable-view';
+import { Event }              from './features/tutorial/component/event/event';
+import { InjectableService }  from './features/tutorial/component/injectable-service/injectable-service';
+import { Image }              from './features/tutorial/component/image/image';
+import { InputOutput }        from './features/tutorial/component/input-output/input-output';
+import { LifecycleHook }      from './features/tutorial/component/lifecycle-hook/lifecycle-hook';
+import { Pipe }               from './features/tutorial/component/pipe/pipe';
+import { PropertyBinding }    from './features/tutorial/component/property-binding/property-binding';
+import { Signal }             from './features/tutorial/component/signal/signal';
+import { Style }              from './features/tutorial/component/style/style';
+import { ReactiveForm }       from './features/tutorial/component/reactive-form/reactive-form';
+import { TemplateDrivenForm } from './features/tutorial/component/template-driven-form/template-driven-form';
+import { Tutorial }           from './features/tutorial/component/tutorial/tutorial';
 
 export const routes: Routes = [
     {
@@ -45,6 +47,11 @@ export const routes: Routes = [
         path: 'property-binding',
         title: 'Property Binding',
         component: PropertyBinding
+    },
+    {
+        path: 'content-projection',
+        title: 'Content Projection',
+        component: ContentProjection
     },
     {
         path: 'input-output',
@@ -84,7 +91,7 @@ export const routes: Routes = [
     {
         path: 'class',
         title: 'Class',
-        component: MyClass
+        component: Class
     },
     {
         path: 'style',

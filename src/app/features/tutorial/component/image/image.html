@@ -1,0 +1,10 @@
+<ul>
+    <li>
+        Static Image:
+        <img ngSrc="./logo.png" alt="Angular logo" width="32" height="32" />
+    </li>
+    <li>
+        Dynamic Image:
+        <img [ngSrc]="logoUrl" [alt]="logoAlt" width="32" height="32" priority />
+    </li>
+</ul>

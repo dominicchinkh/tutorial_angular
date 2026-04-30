@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "trading": {
+    "tutorial": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -64,10 +64,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "trading:build:production"
+              "buildTarget": "tutorial:build:production"
             },
             "development": {
-              "buildTarget": "trading:build:development"
+              "buildTarget": "tutorial:build:development"
             }
           },
           "defaultConfiguration": "development"

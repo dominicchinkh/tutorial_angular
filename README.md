@@ -8,7 +8,7 @@ This project is a compilation of concepts and exercises from the following resou
 
 [Angular 101 Crash Course For Beginners: Learn Angular Fundamentals](https://www.youtube.com/watch?v=uWpgtcSxJ3E&t=3066s)
 
-[Official Angular.dev Tutorials](https://angular.dev/tutorials/learn-angular)
+[Official Angular.dev Tutorials](https://angular.dev/tutorials)
 
 🛠 Project Philosophy
 

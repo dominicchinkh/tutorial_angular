@@ -19,9 +19,14 @@ import { Tutorial }           from './features/tutorial/component/tutorial/tutor
 
 export const routes: Routes = [
     {
-        path: '',
-        title: 'Tutorial',
-        component: Tutorial
+        path: 'class',
+        title: 'Class',
+        component: Class
+    },
+    {
+        path: 'content-projection',
+        title: 'Content Projection',
+        component: ContentProjection
     },
     {
         path: 'control-flow',
@@ -39,19 +44,14 @@ export const routes: Routes = [
         component: Event
     },
     {
+        path: 'injectable-service',
+        title: 'Injectable Service',
+        component: InjectableService
+    },
+    {
         path: 'image',
         title: 'Image',
         component: Image
-    },
-    {
-        path: 'property-binding',
-        title: 'Property Binding',
-        component: PropertyBinding
-    },
-    {
-        path: 'content-projection',
-        title: 'Content Projection',
-        component: ContentProjection
     },
     {
         path: 'input-output',
@@ -59,19 +59,9 @@ export const routes: Routes = [
         component: InputOutput
     },
     {
-        path: 'template-driven-form',
-        title: 'Template Driven Form',
-        component: TemplateDrivenForm
-    },
-    {
-        path: 'reactive-form',
-        title: 'Reactive Form',
-        component: ReactiveForm
-    },
-    {
-        path: 'injectable-service',
-        title: 'Injectable Service',
-        component: InjectableService
+        path: 'lifecycle-hook',
+        title: 'Lifecycle Hook',
+        component: LifecycleHook
     },
     {
         path: 'pipe',
@@ -79,23 +69,33 @@ export const routes: Routes = [
         component: Pipe
     },
     {
-        path: 'signal',
-        title: 'Signal',
-        component: Signal
-    },
-    {
-        path: 'lifecycle-hook',
-        title: 'Lifecycle Hook',
-        component: LifecycleHook
-    },
-    {
-        path: 'class',
-        title: 'Class',
-        component: Class
+        path: 'property-binding',
+        title: 'Property Binding',
+        component: PropertyBinding
     },
     {
         path: 'style',
         title: 'Style',
         component: Style
+    },
+    {
+        path: 'signal',
+        title: 'Signal',
+        component: Signal
+    },
+    {
+        path: 'reactive-form',
+        title: 'Reactive Form',
+        component: ReactiveForm
+    },
+    {
+        path: 'template-driven-form',
+        title: 'Template Driven Form',
+        component: TemplateDrivenForm
+    },
+    {
+        path: '',
+        title: 'Tutorial',
+        component: Tutorial
     }
 ];

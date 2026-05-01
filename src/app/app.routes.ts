@@ -16,6 +16,7 @@ import { Signal }             from './features/tutorial/component/signal/signal'
 import { Style }              from './features/tutorial/component/style/style';
 import { ReactiveForm }       from './features/tutorial/component/reactive-form/reactive-form';
 import { TemplateDrivenForm } from './features/tutorial/component/template-driven-form/template-driven-form';
+import { TemplateVariable }   from './features/tutorial/component/template-variable/template-variable';
 import { Tutorial }           from './features/tutorial/component/tutorial/tutorial';
 
 export const routes: Routes = [
@@ -98,6 +99,11 @@ export const routes: Routes = [
         path: 'template-driven-form',
         title: 'Template Driven Form',
         component: TemplateDrivenForm
+    },
+    {
+        path: 'template-variable',
+        title: 'Template Variable',
+        component: TemplateVariable
     },
     {
         path: '',

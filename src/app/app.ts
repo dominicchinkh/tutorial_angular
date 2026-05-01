@@ -17,6 +17,8 @@ import {RouterLink, RouterOutlet} from '@angular/router';
           |
           <a routerLink="/event">Event</a>
           |
+          <a routerLink="/template-variable">Template Variable</a>
+          |
           <a routerLink="/reactive-form">Reactive Form</a>
           |
           <a routerLink="/template-driven-form">Template Driven Form</a>

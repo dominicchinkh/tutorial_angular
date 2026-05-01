@@ -7,11 +7,4 @@ import { Component } from '@angular/core';
   imports: []
 })
 export class Tutorial {
-  city = 'San Francisco';
-
-  items = new Array();
-
-  addItem(item: string) {
-    this.items.push(item)
-  }
 }

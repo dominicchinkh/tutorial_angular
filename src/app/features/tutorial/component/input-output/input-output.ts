@@ -9,7 +9,7 @@ import {Output} from '../output/output';
   styleUrl: './input-output.css',
 })
 export class InputOutput {
-  items = new Array();
+  items = new Array<string>();
 
   addItem(item: string) {
     this.items.push(item)

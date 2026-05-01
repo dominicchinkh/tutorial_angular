@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { User } from '../../model/user';
+import { OperatingSystem } from '../../model/operating-system';
 
 @Component({
   selector: 'app-control-flow',
@@ -10,13 +12,13 @@ export class ControlFlow {
   isLoggedIn = true;
   isServerRunning = true;
 
-  operatingSystems = [
+  operatingSystems: OperatingSystem[] = [
     { id: 'win',   name: 'Windows'  }, 
     { id: 'osx',   name: 'MacOS'    },
     { id: 'linux', name: 'Linux'    }
   ];
 
-  users = [
+  users: User[] = [
     { id: 0, name: 'Sarah'    },
     { id: 1, name: 'Amy'      },
     { id: 2, name: 'Rachel'   },

@@ -4,6 +4,9 @@ import {RouterLink, RouterOutlet} from '@angular/router';
 @Component({
   selector: 'app-root',
   template: `
+    <header>
+      <img class="brand-logo" src="logo.png" alt="logo" aria-hidden="true" />
+    </header>
     <nav>
         <a routerLink="/">Home</a>
         |

@@ -36,6 +36,36 @@ ng serve
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
+## Mock REST API (json-server)
+
+This project uses [json-server](https://github.com/typicode/json-server) to simulate a REST API during development.
+
+**Install json-server:**
+
+```bash
+npm install json-server
+```
+
+**Set up `db.json`** in the project root with your mock data, for example:
+
+```json
+{
+  "cars": [
+    { "id": 0, "name": "Sunflower GT", "isElectricVehicle": false },
+    { "id": 1, "name": "Flexus Sport", "isElectricVehicle": true },
+    { "id": 2, "name": "Sprout Mach One", "isElectricVehicle": false }
+  ]
+}
+```
+
+**Run json-server** (watches for changes to `db.json`):
+
+```bash
+npx json-server --watch db.json
+```
+
+The API will be available at `http://localhost:3000/`. For example, `http://localhost:3000/cars` returns the full car list.
+
 ## Building
 
 To build the project, run:

@@ -1,6 +1,6 @@
 <p>Car listing: </p>
 <ul>
-    @for (car of cars; track car.id){
+    @for (car of cars(); track car.id){
         <li> ⭐️ <a [routerLink]="['/cars', car.id]">{{ car.name }}</a></li>
     }
 </ul>

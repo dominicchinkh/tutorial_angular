@@ -1,0 +1,7 @@
+{
+    "cars": [
+        { "id": 0, "name": "Sunflower GT",    "isElectricVehicle": false },
+        { "id": 1, "name": "Flexus Sport",    "isElectricVehicle": true }, 
+        { "id": 2, "name": "Sprout Mach One", "isElectricVehicle": false }
+    ]
+}

@@ -1,5 +1,6 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { Car } from '../../model/car';
 import { CarService } from '../../service/car-service';
 
 @Component({
@@ -9,7 +10,12 @@ import { CarService } from '../../service/car-service';
   styleUrl: './injectable-service.css',
 })
 export class InjectableService {
+  cars = signal<Car[]>([]);
   service = inject(CarService);
 
-  cars = this.service.getCars();
+  constructor() {
+    this.service.getCars().then((cars: Car[]) => {
+      this.cars.set(cars);
+    });
+  }
 }

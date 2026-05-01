@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Car } from '../../model/car';
 import { CarService } from '../../service/car-service';
@@ -13,5 +13,11 @@ export class DetailPage {
   route = inject(ActivatedRoute);
   service = inject(CarService);
 
-  car: Car | undefined = this.service.getCar(Number(this.route.snapshot.params['id']));
+  car = signal<Car | undefined>(undefined);
+  
+  constructor() {
+    this.service.getCar(Number(this.route.snapshot.params['id'])).then((car: Car) => {
+      this.car.set(car);
+    })
+  }
 }

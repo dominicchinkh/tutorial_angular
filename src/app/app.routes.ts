@@ -13,6 +13,7 @@ import { LifecycleHook }      from './features/tutorial/component/lifecycle-hook
 import { Pipe }               from './features/tutorial/component/pipe/pipe';
 import { PropertyBinding }    from './features/tutorial/component/property-binding/property-binding';
 import { Signal }             from './features/tutorial/component/signal/signal';
+import { SignalForm }         from './features/tutorial/component/signal-form/signal-form';
 import { Style }              from './features/tutorial/component/style/style';
 import { ReactiveForm }       from './features/tutorial/component/reactive-form/reactive-form';
 import { TemplateDrivenForm } from './features/tutorial/component/template-driven-form/template-driven-form';
@@ -89,6 +90,11 @@ export const routes: Routes = [
         path: 'signal',
         title: 'Signal',
         component: Signal
+    },
+    {
+        path: 'signal-form',
+        title: 'Signal Form',
+        component: SignalForm
     },
     {
         path: 'reactive-form',

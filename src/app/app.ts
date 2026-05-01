@@ -21,6 +21,8 @@ import {RouterLink, RouterOutlet} from '@angular/router';
           |
           <a routerLink="/reactive-form">Reactive Form</a>
           |
+          <a routerLink="/signal-form">Signal Form</a>
+          |
           <a routerLink="/template-driven-form">Template Driven Form</a>
           |
           <a routerLink="/input-output">Input/Output</a>

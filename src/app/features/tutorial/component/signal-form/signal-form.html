@@ -1,0 +1,41 @@
+<form>
+    <div>
+        <label>
+            Email
+            <input type="email" [formField]="loginForm.email" />
+        </label>
+        @if (loginForm.email().touched() && loginForm.email().invalid()) {
+            @for (error of loginForm.email().errors(); track error.kind) {
+                <span>{{ error.message }}</span>
+            }
+        }
+    </div>
+
+    <div>
+        <label>
+            Password
+            <input type="password" [formField]="loginForm.password" />
+        </label>
+        @if (loginForm.password().touched() && loginForm.password().invalid()) {
+            @for (error of loginForm.password().errors(); track error.kind) {
+                <span>{{ error.message }}</span>
+            }
+        }
+    </div>
+
+    <div>
+        <label>
+            <input type="checkbox" [formField]="loginForm.rememberMe" />
+            Remember me
+        </label>
+    </div>
+
+    <button type="submit" [disabled]="loginForm().invalid()" (click)="onSubmit($event)">Log in</button>
+</form>
+
+<div>
+    <h3>Current Form Values:</h3>
+    <p>Email: {{ loginForm.email().value() }}</p>
+    <p>Password: {{ loginForm.password().value() }}</p>
+    <p>Remember me: {{ loginForm.rememberMe().value() }}</p>
+</div>

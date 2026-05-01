@@ -4,6 +4,7 @@ import { Class }              from './features/tutorial/component/class/class';
 import { ContentProjection }  from './features/tutorial/component/content-projection/content-projection';
 import { ControlFlow }        from './features/tutorial/component/control-flow/control-flow';
 import { DeferrableView }     from './features/tutorial/component/deferrable-view/deferrable-view';
+import { DetailPage }         from './features/tutorial/component/detail-page/detail-page';
 import { Event }              from './features/tutorial/component/event/event';
 import { InjectableService }  from './features/tutorial/component/injectable-service/injectable-service';
 import { Image }              from './features/tutorial/component/image/image';
@@ -18,6 +19,11 @@ import { TemplateDrivenForm } from './features/tutorial/component/template-drive
 import { Tutorial }           from './features/tutorial/component/tutorial/tutorial';
 
 export const routes: Routes = [
+    {
+        path: 'cars/:id',
+        title: 'Car Details',
+        component: DetailPage
+    },
     {
         path: 'class',
         title: 'Class',

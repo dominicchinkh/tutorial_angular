@@ -6,9 +6,9 @@ import { Car } from '../model/car';
 })
 export class CarService {
   cars: Car[] = [
-    { id: 0, name: 'Sunflower GT' },
-    { id: 1, name: 'Flexus Sport' }, 
-    { id: 2, name: 'Sprout Mach One' }
+    { id: 0, name: 'Sunflower GT', isElectricVehicle: false },
+    { id: 1, name: 'Flexus Sport', isElectricVehicle: true }, 
+    { id: 2, name: 'Sprout Mach One', isElectricVehicle: false }
   ];
 
   getCarNames(): string[] {

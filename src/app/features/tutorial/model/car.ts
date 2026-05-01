@@ -1,4 +1,5 @@
 export interface Car {
   id: number,
-  name: string
+  name: string,
+  isElectricVehicle: boolean
 }

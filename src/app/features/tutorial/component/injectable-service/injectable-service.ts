@@ -10,5 +10,5 @@ import {CarService} from '../../service/car-service';
 export class InjectableService {
   service = inject(CarService);
 
-  display = this.service.getCars().join(' ⭐️ ');
+  display = this.service.getCarNames().join(' ⭐️ ');
 }

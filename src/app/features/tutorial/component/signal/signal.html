@@ -1,1 +1,61 @@
-{{ name() }}
+<div [class]="userStatus()">
+    Status: {{ userStatus() }}
+
+    <div>
+        <button (click)="loadUser(1)">Load User 1</button>
+        <button (click)="loadUser(2)">Load User 2</button>
+        <button (click)="loadUser(10)">Load Invalid User</button>
+        <button (click)="reloadUser()">Reload User</button>
+    </div>
+    <div>
+        @if (isLoading()) {
+            <p>Loading User...</p>
+        }
+        @else if (hasError()) {
+            <p>Error: {{ userResource.error()?.message }}</p>
+        }
+        @else if (userResource.hasValue()) {
+            <h3>{{ userResource.value().name }}</h3>
+            <p>{{ userResource.value().email }}</p>
+        }
+    </div>
+</div>
+
+<div>
+    <strong>Notifications: </strong>
+    @if (notificationsEnabled()) {
+        Enabled
+    } 
+    @else {
+        Disabled
+    }
+
+    <button (click)="toggleNotification()">
+        @if (notificationsEnabled()) {
+            Disable
+        } 
+        @else {
+            Enable
+        }
+    </button>
+</div>
+
+<div>
+    <strong>Message: </strong> {{ statusMessage() }}
+    <div>
+        <strong>Within Working Hours:</strong>
+        @if (isWithinWorkingHours()) {
+            Yes
+        }
+        @else {
+            No
+        }
+    </div>
+</div>
+
+<div>
+    <button (click)="goOnline()">Go Online</button>
+    <button (click)="goOffline()">Go Offline</button>
+    <button (click)="goAway()">Go Away</button>
+    <button (click)="toggleStatus()">Toggle Status</button>
+</div>

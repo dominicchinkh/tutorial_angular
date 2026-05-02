@@ -1,6 +1,18 @@
-<p>Car listing: </p>
-<ul>
-    @for (car of cars(); track car.id){
-        <li> ⭐️ <a [routerLink]="['/cars', car.id]">{{ car.name }}</a></li>
-    }
-</ul>
+<section>
+    <h2>Car listing: </h2>
+    <ul>
+        @for (car of cars(); track car.id){
+            <li> ⭐️ <a [routerLink]="['/cars', car.id]">{{ car.name }}</a></li>
+        }
+    </ul>
+</section>
+
+<section>
+    <h2>Signal with Services: </h2>
+    <div>
+        Cart: {{ store.totalQuantity() }} items (${{ store.totalPrice() }})
+    </div>
+    <div>
+        <app-cart-display />
+    </div>
+</section>

@@ -1,0 +1,38 @@
+<div>
+    <h2>Shopping Cart</h2>
+
+    <!-- Add some products to test the cart -->
+     <div>
+        <h3>Add Products</h3>
+        <button (click)="addLaptop()">Add Laptop ($999)</button>
+        <button (click)="addMouse()">Add Mouse ($25)</button>
+        <button (click)="addKeyboard()">Add Keyboard ($79)</button>
+     </div>
+
+     <div>
+        <h3>Cart Content</h3>
+        @if (store.cartItems().length === 0) {
+            <p>Your cart is empty</p>
+        }
+        @else {
+            @for (item of store.cartItems(); track item.id) {
+                <div>
+                    <h4>{{ item.name }}</h4>
+                    <p>${{ item.price }} each</p>
+                </div>
+
+                <div>
+                    <button (click)="decreaseQuantity(item.id)">-</button>
+                    <button (click)="increaseQuantity(item.id)">+</button>
+                    <button (click)="removeItem(item.id)">x</button>
+                </div>
+            }
+
+            <div>
+                <p>Total Items: {{ store.totalQuantity() }}</p>
+                <p>Total: ${{ store.totalPrice() }}</p>
+                <button (click)="clearCart()">Clear cart</button>
+            </div>
+        }
+     </div>
+</div>

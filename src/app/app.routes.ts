@@ -5,6 +5,7 @@ import { ContentProjection }  from './features/tutorial/component/content-projec
 import { ControlFlow }        from './features/tutorial/component/control-flow/control-flow';
 import { DeferrableView }     from './features/tutorial/component/deferrable-view/deferrable-view';
 import { DetailPage }         from './features/tutorial/component/detail-page/detail-page';
+import { Directive }         from './features/tutorial/component/directive/directive';
 import { Event }              from './features/tutorial/component/event/event';
 import { InjectableService }  from './features/tutorial/component/injectable-service/injectable-service';
 import { Image }              from './features/tutorial/component/image/image';
@@ -45,6 +46,11 @@ export const routes: Routes = [
         path: 'deferrable-view',
         title: 'Deferrable View',
         component: DeferrableView
+    },
+    {
+        path: 'directive',
+        title: 'Directive',
+        component: Directive
     },
     {
         path: 'event',

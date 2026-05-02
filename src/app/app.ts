@@ -37,6 +37,8 @@ import {RouterLink, RouterOutlet} from '@angular/router';
           |
           <a routerLink="/class">Class</a>
           |
+          <a routerLink="/directive">Directive</a>
+          |
           <a routerLink="/image">Image</a>
           |
           <a routerLink="/lifecycle-hook">Lifecycle Hook</a>

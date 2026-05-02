@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, DestroyRef, inject, signal } from '@angular/core';
 import { CartItem } from '../../model/cart-item';
 import { CartStore } from '../../service/cart-store'
 
@@ -10,6 +10,11 @@ import { CartStore } from '../../service/cart-store'
 })
 export class CartDisplay {
   store = inject(CartStore);
+
+  isProcessingCheckout = signal(false);
+
+  private timeoutId?: ReturnType<typeof setTimeout>;
+  private destroyRef = inject(DestroyRef);
 
   addLaptop() {
     this.store.addItem('1', 'Laptop', 999);
@@ -45,6 +50,12 @@ export class CartDisplay {
     this.store.clearCart();
   }
   
+  processCheckout() {
+    this.isProcessingCheckout.set(true);
+    this.timeoutId = setTimeout(() => this.isProcessingCheckout.set(false), 2000);
+    this.destroyRef.onDestroy(() => clearTimeout(this.timeoutId));
+  }
+
   private findItem(id: string): CartItem | undefined {
     const items = this.store.cartItems();
     return items.find((item: CartItem) => item.id === id)

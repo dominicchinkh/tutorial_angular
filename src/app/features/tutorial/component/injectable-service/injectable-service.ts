@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, signal, viewChild } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CartDisplay } from '../../component/cart-display/cart-display';
 import { Car } from '../../model/car';
@@ -16,9 +16,19 @@ export class InjectableService {
   service = inject(CarService);
   store = inject(CartStore);
 
+  cart = viewChild(CartDisplay);
+
   constructor() {
     this.service.getCars().then((cars: Car[]) => {
       this.cars.set(cars);
     });
+  }
+
+  processCheckout() {
+    const cart = this.cart();
+    if (cart) {
+      // Call methods on a child component directly
+      cart.processCheckout();
+    }
   }
 }

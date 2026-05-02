@@ -12,6 +12,7 @@
     <div>
         Cart: {{ store.totalQuantity() }} items (${{ store.totalPrice() }})
     </div>
+    <button (click)="processCheckout()">Processing cart</button>
     <div>
         <app-cart-display />
     </div>

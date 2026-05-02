@@ -5,8 +5,8 @@
     <!-- Core Features -->
     <div class="component-card">
       <h2>Signal</h2>
-      <p>Demonstrates Angular's reactive <strong>signal()</strong> API for managing component state with fine-grained reactivity.</p>
-      <p class="description">Showcases: signal creation, signal updates, template integration</p>
+      <p>Demonstrates Angular's reactive signals ecosystem with <strong>signal()</strong>, <strong>computed()</strong>, <strong>linkedSignal()</strong>, and <strong>resource()</strong> for state derivation, writable linked state, and async data loading.</p>
+      <p class="description">Showcases: signal creation, computed derivation, linked writable state, resource loading/error states, template integration</p>
     </div>
 
     <div class="component-card">
@@ -45,6 +45,12 @@
       <h2>Input &amp; Output</h2>
       <p>Shows component communication using <strong>@Input()</strong> and <strong>@Output()</strong> decorators for parent-child component interaction.</p>
       <p class="description">Showcases: input properties, output events, event emission</p>
+    </div>
+
+    <div class="component-card">
+      <h2>Model Input</h2>
+      <p>Demonstrates Angular <strong>model()</strong> for writable component state alongside <strong>input()</strong> for one-way data, ideal for form controls and two-way-friendly UI components.</p>
+      <p class="description">Showcases: model.required(), input(), writable signals, checkbox state toggling</p>
     </div>
 
     <div class="component-card">
@@ -118,8 +124,8 @@
     <h2>Learning Path</h2>
     <p>This tutorial covers fundamental to advanced Angular concepts:</p>
     <ul>
-      <li><strong>Fundamentals:</strong> Signals, Property Binding, Event Handling, Template Variables</li>
-      <li><strong>Component Communication:</strong> Input/Output, Content Projection</li>
+      <li><strong>Fundamentals:</strong> Signals (computed, linkedSignal, resource), Property Binding, Event Handling, Template Variables</li>
+      <li><strong>Component Communication:</strong> Input/Output, Model Input, Content Projection</li>
       <li><strong>Forms:</strong> Reactive Forms, Template-Driven Forms, Signal Forms</li>
       <li><strong>Data Presentation:</strong> Pipes, Control Flow, Styling</li>
       <li><strong>Advanced:</strong> Lifecycle Hooks, Dependency Injection, Route Navigation, Performance Optimization</li>

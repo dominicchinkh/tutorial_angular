@@ -7,5 +7,5 @@ import {Component, input} from '@angular/core';
   styleUrl: './input.css',
 })
 export class Input {
-  name = input.required<string>();
+  message = input.required<string>();
 }

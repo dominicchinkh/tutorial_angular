@@ -1,0 +1,34 @@
+<div [class]="themeClass()">
+    <div>
+        <button (click)="toggleTheme()">
+            Switch to
+            @if (theme() === 'light') {
+                Dark
+            }
+            @else {
+                Light
+            }
+        </button>
+
+        @if (!isLoggedIn()) {
+            <button (click)="login()">Login</button>
+        }
+        @else {
+            <button (click)="logout()">Logout</button>
+        }
+    </div>
+
+    <div>
+        <p>Current them: {{ theme() }}</p>
+        <p>User: {{ username() }}</p>
+        <p>
+            Status:
+            @if (isLoggedIn()) {
+                Logged in
+            }
+            @else {
+                Logged out
+            }
+        </p>
+    </div>
+</div>

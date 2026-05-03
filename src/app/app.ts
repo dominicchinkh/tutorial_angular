@@ -13,6 +13,8 @@ import {RouterLink, RouterOutlet} from '@angular/router';
           |
           <a routerLink="/signal">Signal</a>
           |
+          <a routerLink="/effect">Effect</a>
+          |
           <a routerLink="/property-binding">Property Binding</a>
           |
           <a routerLink="/event">Event</a>

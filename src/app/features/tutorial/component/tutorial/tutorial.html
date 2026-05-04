@@ -5,14 +5,14 @@
     <!-- Core Features -->
     <div class="component-card">
       <h2>Signal</h2>
-      <p>Demonstrates Angular's reactive signals ecosystem with <strong>signal()</strong>, <strong>computed()</strong>, <strong>linkedSignal()</strong>, and <strong>resource()</strong> for state derivation, writable linked state, and async data loading.</p>
-      <p class="description">Showcases: signal creation, computed derivation, linked writable state, resource loading/error states, template integration</p>
+      <p>Demonstrates Angular's reactive signals ecosystem with <strong>signal()</strong>, <strong>computed()</strong>, advanced <strong>linkedSignal()</strong> patterns, and <strong>resource()</strong> for async data loading.</p>
+      <p class="description">Showcases: signal equality functions, computed derivation, linkedSignal with previous-state preservation, resourceFromSnapshots composition, loading/error handling, template integration</p>
     </div>
 
     <div class="component-card">
       <h2>Effect</h2>
-      <p>Demonstrates Angular's <strong>effect()</strong> function to run side effects automatically whenever tracked signals change. Shows saving theme preferences to localStorage and logging user activity changes with platform checks for server-side rendering safety.</p>
-      <p class="description">Showcases: effect(), automatic signal tracking, side effects execution, localStorage persistence, isPlatformBrowser checks</p>
+      <p>Demonstrates Angular <strong>effect()</strong> and <strong>afterRenderEffect()</strong> for reactive side effects, including browser-safe localStorage sync, cleanup handling, and DOM-phase callbacks after render.</p>
+      <p class="description">Showcases: effect(), onCleanup(), untracked(), async-boundary behavior, afterRenderEffect phases (earlyRead/write/mixedReadWrite/read), isPlatformBrowser checks</p>
     </div>
 
     <div class="component-card">
@@ -142,7 +142,7 @@
     <h2>Learning Path</h2>
     <p>This tutorial covers fundamental to advanced Angular concepts:</p>
     <ul>
-      <li><strong>Fundamentals:</strong> Signals (computed, linkedSignal, resource, effect), Property Binding, Event Handling, Template Variables</li>
+      <li><strong>Fundamentals:</strong> Signals &amp; Effects (computed, linkedSignal, resource, effect, afterRenderEffect), Property Binding, Event Handling, Template Variables</li>
       <li><strong>Component Communication:</strong> Input/Output, Model Input, Content Projection</li>
       <li><strong>Forms:</strong> Reactive Forms, Template-Driven Forms, Signal Forms</li>
       <li><strong>Data Presentation:</strong> Pipes, Control Flow, Styling, Directives</li>

@@ -18,6 +18,7 @@ import { Signal }             from './features/tutorial/component/signal/signal'
 import { SignalForm }         from './features/tutorial/component/signal-form/signal-form';
 import { Style }              from './features/tutorial/component/style/style';
 import { ReactiveForm }       from './features/tutorial/component/reactive-form/reactive-form';
+import { Selector }           from './features/tutorial/component/selector/selector';
 import { TemplateDrivenForm } from './features/tutorial/component/template-driven-form/template-driven-form';
 import { TemplateVariable }   from './features/tutorial/component/template-variable/template-variable';
 import { Tutorial }           from './features/tutorial/component/tutorial/tutorial';
@@ -94,9 +95,9 @@ export const routes: Routes = [
         component: PropertyBinding
     },
     {
-        path: 'style',
-        title: 'Style',
-        component: Style
+        path: 'selector',
+        title: 'Selector',
+        component: Selector
     },
     {
         path: 'signal',
@@ -107,6 +108,11 @@ export const routes: Routes = [
         path: 'signal-form',
         title: 'Signal Form',
         component: SignalForm
+    },
+    {
+        path: 'style',
+        title: 'Style',
+        component: Style
     },
     {
         path: 'reactive-form',

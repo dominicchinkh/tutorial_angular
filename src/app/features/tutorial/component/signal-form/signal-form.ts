@@ -7,6 +7,27 @@ interface LoginData {
   rememberMe: boolean
 }
 
+/*--------------------------------------------------
+ * ChangeDetectionStrategy.Eager/Default (default). 
+ *
+ * In this mode, Angular checks whether the component's DOM needs an update whenever any activity may have occurred 
+ * application-wide. Activities that trigger this checking include user interaction, network response, timers, and more.
+ * 
+ */
+
+/*--------------------------------------------------
+ * ChangeDetectionStrategy.OnPush
+ *
+ * In this mode, the framework only checks if a component's DOM needs an update when:
+ * 1. A component input has changes as a result of a binding in a template
+ * 2. An event listener in this component runs
+ * 3. The component is explicitly marked for check, via ChangeDetectorRef.markForCheck or something which wraps it, like AsyncPipe
+ * 
+ * Additionally, when an OnPush component is checked, Angular also checks all of its ancestor components, traversing upwards 
+ * through the application tree. 
+ * 
+ */
+
 @Component({
   selector: 'app-signal-form',
   imports: [FormField],

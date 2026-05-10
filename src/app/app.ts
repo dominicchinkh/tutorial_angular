@@ -15,6 +15,8 @@ import {RouterLink, RouterOutlet} from '@angular/router';
           |
           <a routerLink="/effect">Effect</a>
           |
+          <a routerLink="/selector">Selector</a>
+          |
           <a routerLink="/property-binding">Property Binding</a>
           |
           <a routerLink="/event">Event</a>

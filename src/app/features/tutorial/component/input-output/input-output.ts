@@ -15,6 +15,9 @@ export class InputOutput {
 
   agreeToTerms = model(false);
 
+  // You can bind a plain JavaScript property to a model input
+  tooltip = 'Help'
+
   addItem(item: string) {
     this.items.push(item)
   }

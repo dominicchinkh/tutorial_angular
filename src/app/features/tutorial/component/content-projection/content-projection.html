@@ -1,3 +1,21 @@
-<app-content>
-    <p>This is the content</p>
-</app-content>
+<app-custom-card>
+    
+    <!-- Angular can show fallback content for a component's <ng-content> 
+         placeholder if that component doesn't have any matching child content. -->
+
+    <app-card-title>This is the title</app-card-title>
+
+    <app-card-body>This is my custom card body</app-card-body>
+    <app-card-body>This is my another custom card body</app-card-body>
+
+    <!-- ngProjectAs makes this h3 match the "app-card-body" select slot 
+         Note: The <h3> won't appear inside <app-card-body> — it appears 
+         next to it in the same projection slot.
+     -->
+    <h3 ngProjectAs="app-card-body">Hello</h3>
+
+    <p>This is additional content</p>
+    
+</app-custom-card>
+
+<app-footer>-------------footer---------------</app-footer>

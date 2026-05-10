@@ -2,7 +2,7 @@
     <h2>Car listing: </h2>
     <ul>
         @for (car of cars(); track car.id){
-            <li> ⭐️ <a [routerLink]="['/cars', car.id]">{{ car.name }}</a></li>
+            <app-car-detail id="{{ car.id }}" name="{{ car.name }}"></app-car-detail>
         }
     </ul>
 </section>
@@ -12,7 +12,7 @@
     <div>
         Cart: {{ store.totalQuantity() }} items (${{ store.totalPrice() }})
     </div>
-    <button (click)="processCheckout()">Processing cart</button>
+    <button #process (click)="processCheckout()">Processing cart</button>
     <div>
         <app-cart-display />
     </div>

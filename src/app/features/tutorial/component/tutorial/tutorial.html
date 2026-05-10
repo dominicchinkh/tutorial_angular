@@ -1,5 +1,5 @@
 <div class="tutorial-container">
-  <h1>Angular Tutorial Components Overview</h1>
+  <h1>Angular Tutorial Overview</h1>
   
   <section class="components-grid">
     <!-- Core Features -->
@@ -16,9 +16,15 @@
     </div>
 
     <div class="component-card">
+      <h2>Selector</h2>
+      <p>Demonstrates advanced component <strong>selector</strong> patterns including element selectors, attribute selectors with <strong>[attr]</strong>, the <strong>:not</strong> pseudo-class, combining selectors, and comma-separated multi-selectors.</p>
+      <p class="description">Showcases: element selectors, attribute selectors, :not pseudo-class, combining selectors, multi-selectors</p>
+    </div>
+
+    <div class="component-card">
       <h2>Property Binding</h2>
-      <p>Shows how to bind component properties to DOM properties using <strong>[property]</strong> syntax.</p>
-      <p class="description">Showcases: one-way binding from component to template</p>
+      <p>Shows how to bind component properties to DOM properties using <strong>[property]</strong> syntax. Demonstrates that inputs, host bindings, outputs, and lifecycle methods are inherited when extending a component class, including explicit <strong>super()</strong> calls for constructor dependencies and lifecycle overrides.</p>
+      <p class="description">Showcases: one-way binding from component to template, component inheritance (inputs, host bindings, lifecycle methods), super() calls</p>
     </div>
 
     <div class="component-card">
@@ -49,20 +55,14 @@
     <!-- Component Communication -->
     <div class="component-card">
       <h2>Input &amp; Output</h2>
-      <p>Shows component communication using <strong>@Input()</strong> and <strong>@Output()</strong> decorators for parent-child component interaction.</p>
-      <p class="description">Showcases: input properties, output events, event emission</p>
-    </div>
-
-    <div class="component-card">
-      <h2>Model Input</h2>
-      <p>Demonstrates Angular <strong>model()</strong> for writable component state alongside <strong>input()</strong> for one-way data, ideal for form controls and two-way-friendly UI components.</p>
-      <p class="description">Showcases: model.required(), input(), writable signals, checkbox state toggling</p>
+      <p>Shows component communication using <strong>input()</strong>, <strong>output()</strong>, and <strong>model()</strong> signals. Input demonstrates <strong>transform</strong> functions, <strong>booleanAttribute</strong>, <strong>alias</strong>, and <strong>HostAttributeToken</strong>. Output uses alias for custom event names. Model shows <strong>model.required()</strong> for two-way binding and binding plain JavaScript properties to model inputs.</p>
+      <p class="description">Showcases: input.required(), input transform, booleanAttribute, input alias, HostAttributeToken, output alias, model(), model.required(), two-way binding with [(property)]</p>
     </div>
 
     <div class="component-card">
       <h2>Content Projection</h2>
-      <p>Demonstrates content projection using <strong>ng-content</strong> to allow parent components to project content into child components.</p>
-      <p class="description">Showcases: ng-content, component composition</p>
+      <p>Demonstrates content projection using <strong>ng-content</strong> with <strong>select</strong> for multi-slot projection, <strong>ngProjectAs</strong> for slot aliasing, fallback content, <strong>contentChild()</strong> and <strong>contentChildren()</strong> for querying projected content, <strong>ElementRef</strong> read option, <strong>InjectionToken</strong>-based provider queries, and <strong>NgComponentOutlet</strong> for dynamic component rendering with <strong>ngComponentOutletInputs</strong> and <strong>ngComponentOutletInjector</strong>.</p>
+      <p class="description">Showcases: ng-content select, ngProjectAs, fallback content, contentChild(), contentChildren(descendants: true), read: ElementRef, ProviderToken queries, NgComponentOutlet, ngComponentOutletInputs, ngComponentOutletInjector, Injector.create(), exportAs</p>
     </div>
 
     <!-- Signal Forms -->
@@ -89,8 +89,8 @@
     <!-- Styling -->
     <div class="component-card">
       <h2>Styling</h2>
-      <p>Shows various styling approaches including inline styles, CSS classes, and dynamic style binding.</p>
-      <p class="description">Showcases: style binding, dynamic classes, CSS integration</p>
+      <p>Shows various styling approaches including inline styles, CSS classes, dynamic style binding, <strong>ViewEncapsulation</strong> modes (Emulated, ShadowDom, None), and <strong>host</strong> bindings for properties, attributes, classes, styles, and events on the host element.</p>
+      <p class="description">Showcases: style binding, dynamic classes, ViewEncapsulation, host bindings (role, aria, class, style, tabIndex, events)</p>
     </div>
 
     <div class="component-card">
@@ -115,20 +115,14 @@
     <!-- Advanced Features -->
     <div class="component-card">
       <h2>Lifecycle Hooks</h2>
-      <p>Demonstrates all Angular lifecycle hooks: <strong>OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy</strong>.</p>
-      <p class="description">Showcases: component lifecycle, hook execution order, cleanup</p>
+      <p>Demonstrates all Angular lifecycle hooks: <strong>OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy</strong>, plus <strong>afterNextRender()</strong> with read/write phases, <strong>DestroyRef</strong>, <strong>SimpleChanges</strong> for tracking input changes, and DOM manipulation via <strong>Renderer2</strong> and <strong>ElementRef</strong>.</p>
+      <p class="description">Showcases: component lifecycle, hook execution order, afterNextRender write/read phases, SimpleChanges, DestroyRef, Renderer2, ElementRef, DOM API, cleanup</p>
     </div>
 
     <div class="component-card">
-      <h2>Injectable Service</h2>
-      <p>Shows dependency injection using the <strong>inject()</strong> function to consume a <strong>CarService</strong>, then renders the car list as navigable links using <strong>RouterLink</strong>.</p>
-      <p class="description">Showcases: service injection, inject(), getCars(), RouterLink, route navigation</p>
-    </div>
-
-    <div class="component-card">
-      <h2>ViewChild</h2>
-      <p>Demonstrates <strong>viewChild()</strong> to obtain a direct reference to a child <strong>CartDisplay</strong> component and call its methods from the parent. Cart state is managed by a signal-based <strong>CartStore</strong> service with computed <strong>totalPrice</strong> and <strong>totalQuantity</strong>, and <strong>DestroyRef</strong> is used to clean up checkout timers on component destruction.</p>
-      <p class="description">Showcases: viewChild(), child component method calls, CartStore, signal.asReadonly(), computed totals, DestroyRef cleanup</p>
+      <h2>Injectable Service &amp; View Queries</h2>
+      <p>Shows dependency injection using <strong>inject()</strong> to consume <strong>CarService</strong> and <strong>CartStore</strong>. Demonstrates <strong>viewChild()</strong> and <strong>viewChild.required()</strong> for accessing child components, <strong>viewChildren()</strong> for querying multiple children, and template reference variable queries with <strong>viewChild('ref')</strong>. Cart state uses signal-based computed <strong>totalPrice</strong> and <strong>totalQuantity</strong>.</p>
+      <p class="description">Showcases: inject(), viewChild(), viewChild.required(), viewChildren(), template ref queries, computed totals, CarDetail child component, DestroyRef cleanup</p>
     </div>
 
     <div class="component-card">
@@ -142,11 +136,11 @@
     <h2>Learning Path</h2>
     <p>This tutorial covers fundamental to advanced Angular concepts:</p>
     <ul>
-      <li><strong>Fundamentals:</strong> Signals &amp; Effects (computed, linkedSignal, resource, effect, afterRenderEffect), Property Binding, Event Handling, Template Variables</li>
-      <li><strong>Component Communication:</strong> Input/Output, Model Input, Content Projection</li>
-      <li><strong>Forms:</strong> Reactive Forms, Template-Driven Forms, Signal Forms</li>
-      <li><strong>Data Presentation:</strong> Pipes, Control Flow, Styling, Directives</li>
-      <li><strong>Advanced:</strong> Lifecycle Hooks, Dependency Injection, ViewChild, Route Navigation, Performance Optimization</li>
+      <li><strong>Fundamentals:</strong> Selectors, Signals &amp; Effects (computed, linkedSignal, resource, effect, afterRenderEffect), Property Binding (inheritance, super()), Event Handling, Template Variables</li>
+      <li><strong>Component Communication:</strong> Input (transform, alias, HostAttributeToken), Output (alias), Model (two-way binding), Content Projection (contentChild, contentChildren, ngProjectAs, ProviderToken, NgComponentOutlet)</li>
+      <li><strong>Forms:</strong> Reactive Forms, Template-Driven Forms, Signal Forms (OnPush)</li>
+      <li><strong>Data Presentation:</strong> Pipes, Control Flow, Styling (ViewEncapsulation, host bindings), Directives</li>
+      <li><strong>Advanced:</strong> Lifecycle Hooks (afterNextRender, SimpleChanges, DestroyRef, Renderer2, ElementRef), Dependency Injection, View Queries (viewChild, viewChildren), Route Navigation, Performance Optimization</li>
     </ul>
   </section>
 </div>

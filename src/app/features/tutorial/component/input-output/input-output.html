@@ -1,15 +1,24 @@
 <section>
-    <app-input [message]="`Item length is ${items.length}`" />
+    <app-input 
+        [message]="`Item length is ${items.length}`" 
+        [number]="47"
+        preferredName="dominic"
+        variation="primary"
+    />
 </section>
 
 <section>
     <p>🐢 All the way down: {{ items.length }}</p>
-    <app-output (addItemEvent)="addItem($event)"/>
+    <app-output (itemsChanged)="addItem($event)"/>
 </section>
 
 <section>
     <!-- Two-way binding - Use [(property)] syntax to bind parent signals to child models -->
-    <app-model label="I agree to the terms" [(checked)]="agreeToTerms" />
+    <app-model 
+        label="I agree to the terms"
+        [(tooltip)]="tooltip"
+        [(checked)]="agreeToTerms" 
+    />
 
     <div>
         <p>

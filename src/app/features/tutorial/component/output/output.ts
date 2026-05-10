@@ -7,7 +7,8 @@ import {Component, output} from '@angular/core';
   styleUrl: './output.css',
 })
 export class Output {
-  addItemEvent = output<string>();
+  // Specify a different name for the event in a template (the default is `addItemEvent`)
+  addItemEvent = output<string>({alias: 'itemsChanged'});
 
   addItem() {
     this.addItemEvent.emit('🐢');

@@ -13,6 +13,11 @@ export class CartDisplay {
 
   isProcessingCheckout = signal(false);
 
+  // ReturnType<Type> is a built-in TypeScript Utility Type that extracts and 
+  // infers the return type of a function type. It allows you to dynamically 
+  // capture what a function outputs without manually writing out or duplicating 
+  // its type definition.
+  
   private timeoutId?: ReturnType<typeof setTimeout>;
   private destroyRef = inject(DestroyRef);
 

@@ -4,6 +4,12 @@ import {
 } from '@angular/core';
 import { NgComponentOutlet } from '@angular/common';
 
+// An InjectionToken is an object that Angular's dependency injection system uses 
+// to uniquely identify values for injection. Think of it as a special key that lets 
+// you store and retrieve any type of value in Angular's DI system:
+
+// https://angular.dev/guide/di/defining-dependency-providers#automatic-provision-for-non-class-dependencies
+
 const TITLE = new InjectionToken<string>('title');
 
 export interface UserDescriptionConfig {
@@ -24,6 +30,12 @@ export const USER_DESCRIPTION_DATA = new InjectionToken<UserDescriptionConfig>('
         <ng-content>Card title</ng-content>
     </div>
   `,
+
+  // A provider is required here because the `TITLE` service providing non-class value 
+  // and has no providedIn.
+
+  // https://angular.dev/guide/di/defining-dependency-providers#understanding-manual-provider-configuration
+  
   providers: [{ provide:TITLE, useValue: 'my title' }]
 })
 export class CardTitle {
@@ -81,13 +93,29 @@ export class AdminCardDescription {
   imports: [NgComponentOutlet],
   template: `
     <div>
+      <!-- 
+        <app-card-title>This is the title</app-card-title> 
+      -->
       <ng-content select="app-card-title"></ng-content>
+
+      <!-- 
+        <app-card-body>This is my custom card body</app-card-body>
+        <app-card-body>This is my another custom card body</app-card-body>
+        <h3 ngProjectAs="app-card-body">Hello</h3>
+      -->
       <ng-content select="app-card-body"></ng-content>
 
       <!-- Capture all elements that did not match a select attribute -->
+
+      <!--
+        <p>This is additional content</p>
+      -->
       <ng-content></ng-content>
 
-      <ng-container [ngComponentOutlet]="cardDescriptionType()" />
+      <ng-container 
+        [ngComponentOutlet]="cardDescriptionType()" 
+        [ngComponentOutletInjector]="createUserDescriptionCardInjector({id: 0, value: 0})"
+      />
 
       <button (click)="toggleAdminMode()">Toggle Admin Mode</button>
       
@@ -108,7 +136,7 @@ export class AdminCardDescription {
         3. You can provide a custom injector to the dynamically created component using ngComponentOutletInjector
 
         4. You can access the dynamically created component's instance using the directive's exportAs feature 
-           
+
         #<reference name>="ngComponentOutlet"
 
         Check out lazy loading component: https://angular.dev/guide/components/programmatic-rendering#lazy-loading-components

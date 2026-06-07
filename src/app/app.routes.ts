@@ -1,27 +1,28 @@
 import { Routes } from '@angular/router';
 
-import { Class }              from './features/tutorial/component/class/class';
-import { ContentProjection }  from './features/tutorial/component/content-projection/content-projection';
-import { ControlFlow }        from './features/tutorial/component/control-flow/control-flow';
-import { DeferrableView }     from './features/tutorial/component/deferrable-view/deferrable-view';
-import { DetailPage }         from './features/tutorial/component/detail-page/detail-page';
-import { Directive }          from './features/tutorial/component/directive/directive';
-import { Effect }             from './features/tutorial/component/effect/effect';
-import { Event }              from './features/tutorial/component/event/event';
-import { InjectableService }  from './features/tutorial/component/injectable-service/injectable-service';
-import { Image }              from './features/tutorial/component/image/image';
-import { InputOutput }        from './features/tutorial/component/input-output/input-output';
-import { LifecycleHook }      from './features/tutorial/component/lifecycle-hook/lifecycle-hook';
-import { Pipe }               from './features/tutorial/component/pipe/pipe';
-import { PropertyBinding }    from './features/tutorial/component/property-binding/property-binding';
-import { Signal }             from './features/tutorial/component/signal/signal';
-import { SignalForm }         from './features/tutorial/component/signal-form/signal-form';
-import { Style }              from './features/tutorial/component/style/style';
-import { ReactiveForm }       from './features/tutorial/component/reactive-form/reactive-form';
-import { Selector }           from './features/tutorial/component/selector/selector';
-import { TemplateDrivenForm } from './features/tutorial/component/template-driven-form/template-driven-form';
-import { TemplateVariable }   from './features/tutorial/component/template-variable/template-variable';
-import { Tutorial }           from './features/tutorial/component/tutorial/tutorial';
+import { Class }               from './features/tutorial/component/class/class';
+import { ContentProjection }   from './features/tutorial/component/content-projection/content-projection';
+import { ControlFlow }         from './features/tutorial/component/control-flow/control-flow';
+import { DeferrableView }      from './features/tutorial/component/deferrable-view/deferrable-view';
+import { DependencyInjection } from './features/tutorial/component/dependency-injection/dependency-injection';
+import { DetailPage }          from './features/tutorial/component/detail-page/detail-page';
+import { Directive }           from './features/tutorial/component/directive/directive';
+import { Effect }              from './features/tutorial/component/effect/effect';
+import { Event }               from './features/tutorial/component/event/event';
+import { InjectableService }   from './features/tutorial/component/injectable-service/injectable-service';
+import { Image }               from './features/tutorial/component/image/image';
+import { InputOutput }         from './features/tutorial/component/input-output/input-output';
+import { LifecycleHook }       from './features/tutorial/component/lifecycle-hook/lifecycle-hook';
+import { Pipe }                from './features/tutorial/component/pipe/pipe';
+import { PropertyBinding }     from './features/tutorial/component/property-binding/property-binding';
+import { Signal }              from './features/tutorial/component/signal/signal';
+import { SignalForm }          from './features/tutorial/component/signal-form/signal-form';
+import { Style }               from './features/tutorial/component/style/style';
+import { ReactiveForm }        from './features/tutorial/component/reactive-form/reactive-form';
+import { Selector }            from './features/tutorial/component/selector/selector';
+import { TemplateDrivenForm }  from './features/tutorial/component/template-driven-form/template-driven-form';
+import { TemplateVariable }    from './features/tutorial/component/template-variable/template-variable';
+import { Tutorial }            from './features/tutorial/component/tutorial/tutorial';
 
 export const routes: Routes = [
     {
@@ -43,6 +44,11 @@ export const routes: Routes = [
         path: 'control-flow',
         title: 'Control Flow',
         component: ControlFlow
+    },
+    {
+        path: 'dependency-injection',
+        title: 'Dependency Injection',
+        component: DependencyInjection
     },
     {
         path: 'deferrable-view',

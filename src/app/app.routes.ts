@@ -1,5 +1,7 @@
 import { Routes } from '@angular/router';
 
+import { CandleStick }         from './features/chart/candle-stick/candle-stick';
+
 import { Class }               from './features/tutorial/component/class/class';
 import { ContentProjection }   from './features/tutorial/component/content-projection/content-projection';
 import { ControlFlow }         from './features/tutorial/component/control-flow/control-flow';
@@ -25,6 +27,11 @@ import { TemplateVariable }    from './features/tutorial/component/template-vari
 import { Tutorial }            from './features/tutorial/component/tutorial/tutorial';
 
 export const routes: Routes = [
+    {
+        path: 'candle-stick',
+        title: 'Candle Stick',
+        component: CandleStick
+    },
     {
         path: 'cars/:id',
         title: 'Car Details',

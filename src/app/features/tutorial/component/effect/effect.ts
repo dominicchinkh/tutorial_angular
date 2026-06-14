@@ -18,6 +18,10 @@ export class Effect {
 
   constructor(@Inject(PLATFORM_ID) private platformId: object) {
 
+    // effect() is a reactive primitive introduced alongside Angular Signals. It 
+    // allows you to write an operation that automatically executes whenever one 
+    // or more signal values change.
+
     // Effects always run at least once
 
     // Effects always execute asynchronously, during the change detection process

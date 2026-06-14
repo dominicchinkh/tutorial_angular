@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, signal } from '@angular/core';
 import { NgApexchartsModule } from 'ng-apexcharts';
 
 import {
@@ -18,6 +18,11 @@ export type ChartOptions = {
   title: ApexTitleSubtitle;
 };
 
+export interface Data {
+  x: string;
+  y: number[];
+}
+
 @Component({
   selector: 'app-candle-stick',
   imports: [NgApexchartsModule],
@@ -27,38 +32,81 @@ export type ChartOptions = {
 export class CandleStick {
   @ViewChild("chart") chart!: ChartComponent;
   
-  public chartOptions: ChartOptions;
+  private url = 'http://localhost:3000/price';
+
+  public chartOptions = signal<ChartOptions>({
+    series: [
+      { 
+        name: "candle", 
+        data: []
+      }
+    ],
+    chart: { 
+      type: "candlestick", 
+      height: 350
+    },
+    title: {
+      text: "Stock Price", 
+      align: "left"
+    },
+    xaxis: { 
+      type: "datetime",
+      tickPlacement: "on", // Forces ticks and labels to align exactly with the data points
+    },
+    yaxis: { 
+      tooltip: { 
+        enabled: true 
+      } 
+    }
+  });
+
+  async getData(): Promise<Data[]> {
+    try {
+      const response = await fetch(this.url);
+      return await response.json() ?? [];
+
+    } catch (error) {
+      console.error("Failed to fetch price data:", error);
+      return [];
+    }
+  }
 
   constructor() {
-    this.chartOptions = {
-      series: [
-        {
-          name: "candle",
-          data: [
-            { x: new Date(2026, 5, 1), y: [6629.81, 6650.5, 6622.66, 6639.4] },
-            { x: new Date(2026, 5, 2), y: [6639.4, 6667.11, 6613.4, 6651.8] },
-            { x: new Date(2026, 5, 3), y: [6651.8, 6671.3, 6605.5, 6626.02] },
-            { x: new Date(2026, 5, 4), y: [6626.02, 6650.0, 6620.0, 6630.11] },
-            { x: new Date(2026, 5, 5), y: [6630.11, 6662.0, 6625.0, 6647.4] }
-          ]
-        }
-      ],
-      chart: {
-        type: "candlestick",
-        height: 350
-      },
-      title: {
-        text: "Stock Price Development",
-        align: "left"
-      },
-      xaxis: {
-        type: "datetime"
-      },
-      yaxis: {
-        tooltip: {
-          enabled: true
-        }
+
+    this.getData().then((records: Data[]) => {
+
+      if (records.length === 0) {
+        console.log("No data!")
+        return;
       }
-    };
+
+      console.log(records)
+
+      // Update the signal state. Angular handles the change detection seamlessly!
+      this.chartOptions.set({
+        series: [
+          {
+            name: "candle",
+            data: records
+          }
+        ],
+        chart: {
+          type: "candlestick",
+          height: 350
+        },
+        title: {
+          text: "Stock Price",
+          align: "left"
+        },
+        xaxis: {
+          type: "datetime",
+          tickPlacement: "on", // Forces ticks and labels to align exactly with the data points
+          tickAmount: records.length,
+        },
+        yaxis: {
+          tooltip: { enabled: true }
+        }
+      });
+    });
   }
 }

@@ -1,9 +1,13 @@
 <div id="chart">
-  <apx-chart
-    [series]="chartOptions.series"
-    [chart]="chartOptions.chart"
-    [xaxis]="chartOptions.xaxis"
-    [yaxis]="chartOptions.yaxis"
-    [title]="chartOptions.title"
-  ></apx-chart>
+  @if (chartOptions().series[0].data.length > 0) {
+    <apx-chart
+      [series]="chartOptions().series"
+      [chart]="chartOptions().chart"
+      [xaxis]="chartOptions().xaxis"
+      [yaxis]="chartOptions().yaxis"
+      [title]="chartOptions().title"
+    ></apx-chart>
+  } @else {
+    <div class="loading-spinner">Loading Market Data...</div>
+  }
 </div>

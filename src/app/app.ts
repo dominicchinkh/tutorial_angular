@@ -51,6 +51,8 @@ import {RouterLink, RouterOutlet} from '@angular/router';
           |
           <a routerLink="/deferrable-view">Deferrable View</a>
           |
+          <a routerLink="/dependency-injection">Dependency Injection</a>
+          |
           <a routerLink="/candle-stick">Candle Stick</a>
       </nav>
     </header>

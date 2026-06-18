@@ -81,6 +81,9 @@ export class Signal {
     //--------------------------
     // Signal equality function
 
+    // When creating a signal, you can optionally provide an equality function, which will be used to 
+    // check whether the new value is actually different than the previous one
+
     // https://angular.dev/guide/signals#signal-equality-functions
 
     const data = signal(['test'], {equal: isEqual});
@@ -185,7 +188,7 @@ export class Signal {
           return { 'status': 'loading' as const, value: previous.value.value };
         }
 
-        // Otherwise, we simply forward the state of the input resouce
+        // Otherwise, we simply forward the state of the input resource
         return snap;
       })
     })

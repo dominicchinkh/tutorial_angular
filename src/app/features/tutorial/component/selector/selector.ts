@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
 //-----------------------
 // The :not pseudo-class
 
+// [dropzone]:not(p) means this component will apply to any HTML element that has the dropzone 
+// attribute, unless that element is a <p> (paragraph), for example `<div dropzone></div>`
+
 // You can also define multiple selectors with a comma-separated list
 @Component({
   selector: 'drop-zone, [dropzone]:not(p)',
